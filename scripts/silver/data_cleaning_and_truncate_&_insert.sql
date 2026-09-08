@@ -23,8 +23,8 @@ BEGIN
 		TRIM(cst_firstname) AS cst_firstname,
 		TRIM(cst_lastname) AS cst_lastname,
 		CASE 
-			WHEN TRIM(UPPER(cst_gndr)) = 'M' THEN 'Married'
-			WHEN TRIM(UPPER(cst_gndr)) = 'S' THEN 'Single'
+			WHEN TRIM(UPPER(cst_marital_status)) = 'M' THEN 'Married'
+			WHEN TRIM(UPPER(cst_marital_status)) = 'S' THEN 'Single'
 			ELSE 'n/a'
 		END AS cst_marital_status,
 		CASE 

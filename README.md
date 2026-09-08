@@ -36,7 +36,7 @@ This repository demonstrates a complete data warehousing and analytics workflow:
 
 The warehouse follows the **Medallion Architecture**:
 
-![Medallion Data Architecture](Data%20Architecture.jpg)
+![Medallion Data Architecture](Data%20Architecture%20(draw.io).jpg)
 
 
 
@@ -66,22 +66,22 @@ End-to-End-SQL-Data-Warehouse-And-Analytics-Project/
 ├── analytics_script/                           # SQL scripts for analysis & reporting
 │   └── sql_queries.sql                         # All exploration, EDA, and advanced analytics queries in one file
 │
+├── Data Architecture (draw.io).jpg             # Medallion architecture
 ├── Data Flow Diagram (draw.io).jpg             # End-to-end data flow across layers
-├── Data Model (Star Schema) (draw.io).jpg      # Gold layer dimensional model
 ├── Integration Model (draw.io).jpg             # CRM + ERP source integration model
+├── Data Model (Star Schema) (draw.io).jpg      # Gold layer dimensional model
+
 │
 └── README.md                                   # Project documentation (this file)
 ```
-
-> **Note:** File names above reflect the standard convention used in this project. Update this section with the exact script names as the repository grows.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Database:** SQL Server / T-SQL (adjust if using another engine)
-- **IDE:** SQL Server Management Studio (SSMS) / Azure Data Studio
-- **Modeling:** Draw.io — for architecture, integration, and star schema diagrams
+- **Database:** Microsoft SQL Server
+- **IDE:** SQL Server Management Studio (SSMS)
+- **Modeling:** Draw.io — for architecture, data flow, integration and star schema diagrams
 - **Version Control:** Git & GitHub
 
 ---
@@ -97,7 +97,6 @@ End-to-End-SQL-Data-Warehouse-And-Analytics-Project/
 - **Data Quality:** Cleanse and resolve data quality issues (nulls, duplicates, inconsistent formats) prior to analysis.
 - **Integration:** Combine both sources into a single, user-friendly data model designed for analytical queries.
 - **Scope:** Focus on the latest dataset only — historization of data is not required.
-- **Documentation:** Provide clear documentation of the data model for both business stakeholders and analytics teams.
 
 ### 2. BI: Analytics & Reporting (Data Analysis)
 
@@ -122,11 +121,13 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 ## 🖼️ Repository Diagrams
 
+**Data Flow Diagram** — how data moves from source → Bronze → Silver → Gold
+![Data Flow Diagram](Data%20Flow%20Diagram%20(draw.io).jpg)
+
+
 **Integration Model** — how CRM and ERP source tables relate and integrate
 ![Integration Model](Integration%20Model%20(draw.io).jpg)
 
-**Data Flow Diagram** — how data moves from source → Bronze → Silver → Gold
-![Data Flow Diagram](Data%20Flow%20Diagram%20(draw.io).jpg)
 
 **Data Model (Star Schema)** — final dimensional model used for analytics
 ![Data Model (Star Schema)](Data%20Model%20(Star%20Schema)%20(draw.io).jpg)
@@ -135,46 +136,32 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 ## 📊 Key Insights & Findings
 
-Numbers below were computed directly from the CRM/ERP source files (`cust_info`, `prd_info`, `sales_details`, `CUST_AZ12`, `LOC_A101`, `PX_CAT_G1V2`) after applying the same cleansing rules used in the Silver/Gold layers (deduplication, code standardization, and sales/price correction).
+1. **Bikes are the main source of revenue.**
+   Bikes generated about **$28.3 million**, which is around **96.5% of total revenue**. Accessories and Clothing contributed very little in comparison. Among bikes, **Road Bikes generated the most revenue ($14.5M)**, followed by Mountain Bikes ($10.0M) and Touring Bikes ($3.8M).
 
-### 📌 Headline Numbers
+2. **The US and Australia are the biggest markets.**
+   The **US ($9.16M)** and **Australia ($9.06M)** generated almost the same amount of revenue. They were followed by the **UK ($3.4M), Germany ($2.9M), France ($2.6M), and Canada ($2.0M)**.
+   There are also **337 customers without a country recorded**, which shows a data-quality issue that should be fixed.
 
-| Metric | Value |
-|---|---|
-| Total Revenue | **$29.36M** across 60,398 line items / 27,659 orders |
-| Sales Period | **Dec 2010 – Jan 2014** (37 full months + 2 partial edge months) |
-| Avg Revenue per Customer | **$1,588** |
-| Repeat Purchase Rate | **37.1%** (6,865 of 18,484 customers ordered 2+ times; 11,619 bought only once) |
+3. **Most customers buy only once.**
+   About **63% of customers made only one purchase**, while **37% made repeat purchases**. Since bikes are expensive and people don't buy them very often, this may be normal. However, the business should check whether it is spending too much on attracting new customers instead of keeping existing ones.
 
-### 📈 Monthly Revenue Trend
+4. **Revenue is spread across many customers.**
+   The top 10 customers each generated between **$12.9K and $13.3K**. Their spending is very similar, which means the business does not depend heavily on one or two very large customers.
 
-Revenue accelerates sharply from mid-2013 onward — **Q4 2013 alone (~$5.3M) is nearly as large as all of 2012 (~$5.8M).**
+5. **Some customer information is missing.**
+   Gender information is mostly complete, with only **15 customers having an unknown gender**. However, around **4,569 customers (25%) have no marital status recorded**. This suggests that customer data collection could be improved.
 
-### 🧭 Key Insights
-
-1. **Bikes dominate everything.** Bikes = $28.3M (96.5%) of revenue; Accessories ($700K) and Clothing ($340K) are rounding errors by comparison. Within bikes, **Road Bikes alone ($14.5M) outsell Mountain ($10.0M) and Touring ($3.8M) combined.**
-
-2. **Geography is concentrated but balanced at the top.** The US ($9.16M) and Australia ($9.06M) are nearly tied as the top two markets, followed by the UK ($3.4M), Germany ($2.9M), France ($2.6M), and Canada ($2.0M). **337 customers (~$227K of revenue) have no country on file** — a data-quality gap worth closing.
-
-3. **Customer base skews low-loyalty.** 63% of customers bought exactly once; only 37% became repeat buyers. Given bikes are big-ticket, infrequent purchases, this isn't unusual — but it means **most revenue growth is coming from new customer acquisition, not retention**, which is worth validating against marketing spend.
-
-4. **Top customers cluster very tightly.** The top 10 customers each generated $12.9K–$13.3K — a narrow band, meaning no single "whale" is propping up revenue. It's a broad base of similarly high-value buyers rather than a concentration risk.
-
-5. **Gender/marital status data is thin.** Only 15 customers have unknown gender (clean), but **4,569 customers (~25%) have "n/a" marital status** — worth flagging to whoever owns customer data capture upstream.
 
 ---
 
 ## 👨‍💻 About the Author
 
 **Surajkumar Bevnale**
-Aspiring Data Analyst | SQL • Excel • Power BI • Python
+Data Analyst | SQL • Excel • Power BI • Python
 B.Tech, Engineering Physics, IIT Ropar (2023–2027)
 
 - 📫 Reach me at: surajk.b168@gmail.com
-- 🔗 GitHub: [@SurajB-168](https://github.com/SurajB-168)
-
+- 🔗 LinekdIn: [Surajkumar B](https://www.linkedin.com/in/skb168/)
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License — feel free to use, modify, and share with attribution.

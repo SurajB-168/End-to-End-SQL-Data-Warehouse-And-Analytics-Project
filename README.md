@@ -18,7 +18,6 @@ It covers the full journey from raw source data to business-ready insights, comb
 - [How to Run](#-how-to-run)
 - [Repository Diagrams](#-repository-diagrams)
 - [About the Author](#-about-the-author)
-- [License](#-license)
 
 ---
 
@@ -37,30 +36,9 @@ This repository demonstrates a complete data warehousing and analytics workflow:
 
 The warehouse follows the **Medallion Architecture**:
 
-![Medallion Data Architecture](Data_Architecture.jpg)
+![Medallion Data Architecture](Data%20Architecture.jpg)
 
-```
-   CRM & ERP (CSV Files)
-            │
-            ▼
-    🥉 BRONZE LAYER
-   Raw data, loaded as-is
-   (no transformations)
-            │
-            ▼
-    🥈 SILVER LAYER
-   Cleansed, standardized,
-   and normalized data
-            │
-            ▼
-    🥇 GOLD LAYER
-   Business-ready data
-   modeled as a Star Schema
-            │
-            ▼
-  📊 Analytics & Reporting
- (Customer, Product, Sales)
-```
+
 
 | Layer | Purpose | Object Type | Transformations |
 |---|---|---|---|

@@ -24,7 +24,7 @@ BEGIN
 		TRIM(cst_lastname) AS cst_lastname,
 		CASE 
 			WHEN TRIM(UPPER(cst_gndr)) = 'M' THEN 'Married'
-			WHEN TRIM(UPPER(cst_gndr)) = 'F' THEN 'Single'
+			WHEN TRIM(UPPER(cst_gndr)) = 'S' THEN 'Single'
 			ELSE 'n/a'
 		END AS cst_marital_status,
 		CASE 

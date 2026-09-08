@@ -133,23 +133,39 @@ These insights empower stakeholders with key business metrics, enabling strategi
 # 📊 Business Insights & Recommendations
 
 
-### Key Insights
+**Analysis Period:** Dec 2010 – Jan 2014 | **6 Countries** | **295 Products** | **18,484 Customers**
 
-* **Bikes drive the business:** 96.5% of revenue comes from bikes, with Road and Mountain Bikes contributing 83%+ of total sales.
-* **Customer retention is low:** 63% of customers made only one purchase, while the top 20% generate 66% of revenue.
-* **US & Australia lead:** Both markets contribute ~31% of total revenue, while Canada is the smallest at ~7%.
-* **Core customers are 30–49:** This age group generates around 66% of total revenue.
-* **Accessories have the highest margin:** 62.8% vs. 39.2% for Bikes and 40.2% for Clothing.
-* **Sales grew strongly in 2013:** The January 2014 drop likely reflects incomplete data and should be validated.
+### Key Metrics
 
-### Recommendations
+| Metric              |       Value |
+| ------------------- | ----------: |
+| 💰 Total Sales      | **$29.36M** |
+| 🛒 Total Orders     |  **27,659** |
+| 📦 Items Sold       |  **60,423** |
+| 💵 Avg. Order Value |  **$1,061** |
+| 👥 Customers        |  **18,484** |
+| 🌍 Countries        |       **6** |
+| 🚲 Products         |     **295** |
 
-* **Increase accessory sales** through bike bundles and checkout upsells.
-* **Improve retention** with loyalty programs, follow-ups, and maintenance reminders.
-* **Protect top customers** with VIP rewards and personalized offers.
-* **Prioritize Road & Mountain Bikes** for inventory and marketing.
-* **Grow the Canadian market** through targeted pricing and marketing campaigns.
-* **Validate incomplete/early data** before making decisions based on 2010–2011 and January 2014 results.
+### 🔍 Key Insights
+
+* **Bikes dominate:** 96.5% of revenue; Road & Mountain Bikes generate 83%+ of total sales.
+* **Strong customer concentration:** Top 20% of customers generate **66% of revenue**.
+* **Low retention:** **63%** of customers made only one purchase.
+* **Top markets:** US and Australia each contribute ~**31%** of revenue.
+* **Core age group:** Customers aged **30–49 generate ~66%** of revenue.
+* **Accessories have the highest margin:** **62.8%** vs. 39.2% for Bikes.
+* **Strong growth in 2013:** Revenue peaked at **$1.87M/month** in Dec 2013; Jan 2014 appears incomplete.
+
+### ✅ Recommendations
+
+* Increase **accessory sales** through bundles and upsells.
+* Improve **customer retention** with loyalty programs and post-purchase campaigns.
+* Protect **high-value customers** with VIP rewards.
+* Continue prioritizing **Road & Mountain Bikes**.
+* Focus growth efforts on **Canada** and the **30–49 age group**.
+* Validate **early 2010–2011 and Jan 2014 data** before making decisions.
+
 
 
 ---
